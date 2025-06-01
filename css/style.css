@@ -1,0 +1,276 @@
+/* Grundfarben */
+:root {
+  --green-dark: #556B2F;
+  --green-medium: #6B8E23;
+  --green-light: #8FBC8F;
+  --beige: #F5F2EB;
+  --brown: #8B5A2B;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+  --font-sans: "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body-Grundlayout */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--beige);
+  color: var(--green-dark);
+  line-height: 1.6;
+  padding-top: 200px; /* Anpassung je nach tatsächlicher Header-Höhe */
+}
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--green-dark);
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--green-medium);
+}
+
+/* Header mit Logo & Navigation */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.logo-container {
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Divider unter Logo */
+.divider {
+  width: 100%;
+  height: 4px;
+  background-color: var(--green-dark);
+  margin: 1rem 0;
+}
+
+/* Burger-Menü */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--green-dark);
+  display: block;
+  border-radius: 2px;
+}
+
+/* Navigation */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin: 0.5rem 0;
+}
+
+.nav a {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Hauptinhalt */
+main {
+  padding-top: 160px; /* gleicht die fixe Header-Höhe aus */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.start h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--green-dark);
+}
+
+.start p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--green-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: var(--beige);
+    padding: 1rem;
+    box-shadow: 0 2px 6px var(--shadow);
+    width: 100%;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
+  main {
+    padding: 1.5rem;
+  }
+}
+/* Login & Registrierung Formulare */
+form {
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--shadow);
+  max-width: 400px;
+  margin: 1rem auto 3rem auto;
+  font-family: var(--font-sans);
+}
+
+form h2 {
+  font-family: var(--font-serif);
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  font-size: 0.95rem;
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid var(--green-light);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--green-dark);
+  transition: border-color var(--transition);
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: var(--green-medium);
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  background-color: var(--green-dark);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+form button:hover,
+form button:focus {
+  background-color: var(--green-medium);
+  outline: none;
+}
+
+/* Fehlermeldungen & Erfolgsmeldungen */
+.message {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1.5px solid #f5c2c7;
+}
+
+.success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1.5px solid #badbcc;
+}
